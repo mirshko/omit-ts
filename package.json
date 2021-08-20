@@ -13,7 +13,7 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
-    "test": "tsdx test",
+    "test": "tsdx test --no-cache",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
@@ -37,11 +37,11 @@
   "size-limit": [
     {
       "path": "dist/omit-ts.cjs.production.min.js",
-      "limit": "110 B"
+      "limit": "50 B"
     },
     {
       "path": "dist/omit-ts.esm.js",
-      "limit": "110 B"
+      "limit": "50 B"
     }
   ],
   "devDependencies": {

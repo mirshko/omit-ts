@@ -1,15 +1,19 @@
-export default function omit<
-  T extends object,
-  K extends Extract<keyof T, string>
->(obj: T, keys: K[]): Omit<T, K> {
-  let ret: any = {};
-  const exclude: Set<string> = new Set(keys);
+interface OmitInterface {
+  <T extends object, K extends [...(keyof T)[]]>(obj: T, keys: K): {
+    [K2 in Exclude<keyof T, K[number]>]: T[K2];
+  };
+}
 
-  for (let key in obj) {
-    if (!exclude.has(key)) {
-      ret[key] = obj[key];
-    }
+export const omit: OmitInterface = (obj, keys) => {
+  const ret = {} as {
+    [K in keyof typeof obj]: typeof obj[K];
+  };
+
+  let key: keyof typeof obj;
+
+  for (key in obj) {
+    if (!keys.includes(key)) ret[key] = obj[key];
   }
 
   return ret;
-}
+};

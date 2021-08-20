@@ -1,7 +1,7 @@
-import omit from '../src';
+import { omit } from '../src';
 
-describe('omits keys', () => {
-  it('return without a key', () => {
+describe('omits', () => {
+  it('a single key', () => {
     const source = {
       foo: 'foo',
       bar: 'bar',
@@ -12,7 +12,7 @@ describe('omits keys', () => {
     expect(obj).not.toHaveProperty('foo');
   });
 
-  it('return without multiple keys', () => {
+  it('multiple keys', () => {
     const source = {
       foo: 'foo',
       bar: 'bar',
