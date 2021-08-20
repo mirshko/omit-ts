@@ -7,7 +7,7 @@ Absolutely teeny tiny (less than 50 Bytes) Typescript omit based on [this answer
 ## Usage
 
 ```ts
-import omit from 'omit-ts';
+import { omit } from 'omit-ts';
 
 const source = {
   foo: 'foo',

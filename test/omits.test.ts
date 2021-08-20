@@ -1,4 +1,4 @@
-import omit from '../src';
+import { omit } from '../src';
 
 describe('omits', () => {
   it('a single key', () => {
