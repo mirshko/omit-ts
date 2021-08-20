@@ -7,7 +7,7 @@ describe('omits keys', () => {
       bar: 'bar',
     };
 
-    const obj = omit(source, 'foo');
+    const obj = omit(source, ['foo']);
 
     expect(obj).not.toHaveProperty('foo');
   });
@@ -20,7 +20,7 @@ describe('omits keys', () => {
       buzz: 'buzz',
     };
 
-    const obj = omit(source, 'bar', 'fizz', 'buzz');
+    const obj = omit(source, ['bar', 'fizz', 'buzz']);
 
     expect(obj).not.toHaveProperty(['bar', 'fizz', 'buzz']);
   });
