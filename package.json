@@ -37,11 +37,11 @@
   "size-limit": [
     {
       "path": "dist/omit-ts.cjs.production.min.js",
-      "limit": "50 B"
+      "limit": "60 B"
     },
     {
       "path": "dist/omit-ts.esm.js",
-      "limit": "50 B"
+      "limit": "60 B"
     }
   ],
   "devDependencies": {
