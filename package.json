@@ -51,5 +51,15 @@
     "tsdx": "^0.14.1",
     "tslib": "^2.3.1",
     "typescript": "^4.3.5"
-  }
+  },
+  "description": "Absolutely teeny tiny (less than 50 Bytes) Typescript omit",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mirshko/omit-ts.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/mirshko/omit-ts/issues"
+  },
+  "homepage": "https://github.com/mirshko/omit-ts#readme"
 }
