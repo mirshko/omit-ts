@@ -1,58 +1,34 @@
 {
+  "name": "omit-ts",
+  "author": "Jeff Reiner",
+  "description": "Absolutely teeny tiny (less than 50 Bytes) Typescript omit",
   "version": "1.0.1",
   "license": "MIT",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "type": "module",
+  "source": "src/omit.ts",
+  "exports": {
+    "require": "./dist/omit.cjs",
+    "default": "./dist/omit.modern.js"
+  },
+  "main": "./dist/omit.cjs",
+  "module": "./dist/omit.umd.js",
+  "unpkg": "./dist/omit.umd.js",
+  "types": "./dist/omit.d.ts",
   "files": [
     "dist",
     "src"
   ],
   "engines": {
-    "node": ">=10"
+    "node": ">=16"
   },
   "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "test": "tsdx test --no-cache",
-    "lint": "tsdx lint",
-    "prepare": "tsdx build",
-    "size": "size-limit",
-    "analyze": "size-limit --why"
+    "dev": "microbundle watch",
+    "build": "microbundle",
+    "prepare": "yarn run build"
   },
-  "peerDependencies": {},
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
-  },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
-  },
-  "name": "omit-ts",
-  "author": "Jeff Reiner",
-  "module": "dist/omit-ts.esm.js",
-  "size-limit": [
-    {
-      "path": "dist/omit-ts.cjs.production.min.js",
-      "limit": "60 B"
-    },
-    {
-      "path": "dist/omit-ts.esm.js",
-      "limit": "60 B"
-    }
-  ],
   "devDependencies": {
-    "@size-limit/preset-small-lib": "^5.0.3",
-    "husky": "^7.0.1",
-    "size-limit": "^5.0.3",
-    "tsdx": "^0.14.1",
-    "tslib": "^2.3.1",
-    "typescript": "^4.3.5"
+    "microbundle": "^0.15.1"
   },
-  "description": "Absolutely teeny tiny (less than 50 Bytes) Typescript omit",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mirshko/omit-ts.git"
